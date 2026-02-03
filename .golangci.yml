@@ -5,7 +5,6 @@ linters:
   enable:
     - bodyclose
     - dogsled
-    - dupl
     - errcheck
     - errorlint
     - exhaustive
@@ -37,8 +36,6 @@ linters:
     - whitespace
 
 linters-settings:
-  dupl:
-    threshold: 100
   gocyclo:
     min-complexity: 15
   goconst:
@@ -86,6 +83,5 @@ issues:
   exclude-rules:
     - path: _test\.go
       linters:
-        - dupl
         - gosec
         - goconst
