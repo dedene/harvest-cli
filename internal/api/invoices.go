@@ -10,39 +10,39 @@ import (
 
 // Invoice represents a Harvest invoice.
 type Invoice struct {
-	ID                 int64              `json:"id"`
-	ClientKey          string             `json:"client_key"`
-	Number             string             `json:"number"`
-	PurchaseOrder      string             `json:"purchase_order"`
-	Amount             float64            `json:"amount"`
-	DueAmount          float64            `json:"due_amount"`
-	Tax                *float64           `json:"tax"`
-	TaxAmount          float64            `json:"tax_amount"`
-	Tax2               *float64           `json:"tax2"`
-	Tax2Amount         float64            `json:"tax2_amount"`
-	Discount           *float64           `json:"discount"`
-	DiscountAmount     float64            `json:"discount_amount"`
-	Subject            string             `json:"subject"`
-	Notes              string             `json:"notes"`
-	Currency           string             `json:"currency"`
-	State              string             `json:"state"`
-	PeriodStart        *string            `json:"period_start"`
-	PeriodEnd          *string            `json:"period_end"`
-	IssueDate          string             `json:"issue_date"`
-	DueDate            string             `json:"due_date"`
-	PaymentTerm        string             `json:"payment_term"`
-	SentAt             *time.Time         `json:"sent_at"`
-	PaidAt             *time.Time         `json:"paid_at"`
-	PaidDate           *string            `json:"paid_date"`
-	ClosedAt           *time.Time         `json:"closed_at"`
-	RecurringInvoiceID *int64             `json:"recurring_invoice_id"`
-	Client             ClientRef          `json:"client"`
-	Estimate           *EstimateRef       `json:"estimate"`
-	Retainer           *RetainerRef       `json:"retainer"`
-	Creator            *UserRef           `json:"creator"`
-	LineItems          []InvoiceLineItem  `json:"line_items"`
-	CreatedAt          time.Time          `json:"created_at"`
-	UpdatedAt          time.Time          `json:"updated_at"`
+	ID                 int64             `json:"id"`
+	ClientKey          string            `json:"client_key"`
+	Number             string            `json:"number"`
+	PurchaseOrder      string            `json:"purchase_order"`
+	Amount             float64           `json:"amount"`
+	DueAmount          float64           `json:"due_amount"`
+	Tax                *float64          `json:"tax"`
+	TaxAmount          float64           `json:"tax_amount"`
+	Tax2               *float64          `json:"tax2"`
+	Tax2Amount         float64           `json:"tax2_amount"`
+	Discount           *float64          `json:"discount"`
+	DiscountAmount     float64           `json:"discount_amount"`
+	Subject            string            `json:"subject"`
+	Notes              string            `json:"notes"`
+	Currency           string            `json:"currency"`
+	State              string            `json:"state"`
+	PeriodStart        *string           `json:"period_start"`
+	PeriodEnd          *string           `json:"period_end"`
+	IssueDate          string            `json:"issue_date"`
+	DueDate            string            `json:"due_date"`
+	PaymentTerm        string            `json:"payment_term"`
+	SentAt             *time.Time        `json:"sent_at"`
+	PaidAt             *time.Time        `json:"paid_at"`
+	PaidDate           *string           `json:"paid_date"`
+	ClosedAt           *time.Time        `json:"closed_at"`
+	RecurringInvoiceID *int64            `json:"recurring_invoice_id"`
+	Client             ClientRef         `json:"client"`
+	Estimate           *EstimateRef      `json:"estimate"`
+	Retainer           *RetainerRef      `json:"retainer"`
+	Creator            *UserRef          `json:"creator"`
+	LineItems          []InvoiceLineItem `json:"line_items"`
+	CreatedAt          time.Time         `json:"created_at"`
+	UpdatedAt          time.Time         `json:"updated_at"`
 }
 
 // EstimateRef is a reference to an estimate.
@@ -127,21 +127,21 @@ func (o InvoiceListOptions) QueryParams() string {
 
 // InvoiceInput is used to create or update an invoice.
 type InvoiceInput struct {
-	ClientID       int64                   `json:"client_id,omitempty"`
-	RetainerID     *int64                  `json:"retainer_id,omitempty"`
-	EstimateID     *int64                  `json:"estimate_id,omitempty"`
-	Number         *string                 `json:"number,omitempty"`
-	PurchaseOrder  *string                 `json:"purchase_order,omitempty"`
-	Tax            *float64                `json:"tax,omitempty"`
-	Tax2           *float64                `json:"tax2,omitempty"`
-	Discount       *float64                `json:"discount,omitempty"`
-	Subject        *string                 `json:"subject,omitempty"`
-	Notes          *string                 `json:"notes,omitempty"`
-	Currency       *string                 `json:"currency,omitempty"`
-	IssueDate      *string                 `json:"issue_date,omitempty"`
-	DueDate        *string                 `json:"due_date,omitempty"`
-	PaymentTerm    *string                 `json:"payment_term,omitempty"`
-	LineItems      []InvoiceLineItemInput  `json:"line_items,omitempty"`
+	ClientID        int64                   `json:"client_id,omitempty"`
+	RetainerID      *int64                  `json:"retainer_id,omitempty"`
+	EstimateID      *int64                  `json:"estimate_id,omitempty"`
+	Number          *string                 `json:"number,omitempty"`
+	PurchaseOrder   *string                 `json:"purchase_order,omitempty"`
+	Tax             *float64                `json:"tax,omitempty"`
+	Tax2            *float64                `json:"tax2,omitempty"`
+	Discount        *float64                `json:"discount,omitempty"`
+	Subject         *string                 `json:"subject,omitempty"`
+	Notes           *string                 `json:"notes,omitempty"`
+	Currency        *string                 `json:"currency,omitempty"`
+	IssueDate       *string                 `json:"issue_date,omitempty"`
+	DueDate         *string                 `json:"due_date,omitempty"`
+	PaymentTerm     *string                 `json:"payment_term,omitempty"`
+	LineItems       []InvoiceLineItemInput  `json:"line_items,omitempty"`
 	LineItemsImport *InvoiceLineItemsImport `json:"line_items_import,omitempty"`
 }
 
@@ -160,8 +160,8 @@ type InvoiceLineItemInput struct {
 
 // InvoiceLineItemsImport is used to import time/expenses to an invoice.
 type InvoiceLineItemsImport struct {
-	ProjectIDs []int64 `json:"project_ids,omitempty"`
-	Time       *InvoiceTimeImport `json:"time,omitempty"`
+	ProjectIDs []int64                `json:"project_ids,omitempty"`
+	Time       *InvoiceTimeImport     `json:"time,omitempty"`
 	Expenses   *InvoiceExpensesImport `json:"expenses,omitempty"`
 }
 
@@ -174,10 +174,10 @@ type InvoiceTimeImport struct {
 
 // InvoiceExpensesImport specifies how to import expenses.
 type InvoiceExpensesImport struct {
-	SummaryType string `json:"summary_type,omitempty"` // category, project, people, detailed
-	From        string `json:"from,omitempty"`
-	To          string `json:"to,omitempty"`
-	AttachReceipts bool `json:"attach_receipts,omitempty"`
+	SummaryType    string `json:"summary_type,omitempty"` // category, project, people, detailed
+	From           string `json:"from,omitempty"`
+	To             string `json:"to,omitempty"`
+	AttachReceipts bool   `json:"attach_receipts,omitempty"`
 }
 
 // ListInvoices returns a paginated list of invoices.

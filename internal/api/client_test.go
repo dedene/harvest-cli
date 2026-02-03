@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"net/http"
 	"net/http/httptest"
-	"sync"
 	"sync/atomic"
 	"testing"
 	"time"
@@ -358,21 +357,4 @@ func TestExitCodes(t *testing.T) {
 			t.Errorf("ExitCode(%T) = %d, want %d", tt.err, got, tt.want)
 		}
 	}
-}
-
-// sequenceTokenSource returns different tokens on each call.
-type sequenceTokenSource struct {
-	mu    sync.Mutex
-	count int
-}
-
-func (s *sequenceTokenSource) Token() (*oauth2.Token, error) {
-	s.mu.Lock()
-	defer s.mu.Unlock()
-	s.count++
-	token := "token1"
-	if s.count > 1 {
-		token = "token2"
-	}
-	return &oauth2.Token{AccessToken: token}, nil
 }

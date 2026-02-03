@@ -12,13 +12,13 @@ type PaginationLinks struct {
 
 // Pagination contains common pagination fields.
 type Pagination struct {
-	PerPage      int              `json:"per_page"`
-	TotalPages   int              `json:"total_pages"`
-	TotalEntries int              `json:"total_entries"`
-	NextPage     *int             `json:"next_page"`
-	PreviousPage *int             `json:"previous_page"`
-	Page         int              `json:"page"`
-	Links        PaginationLinks  `json:"links"`
+	PerPage      int             `json:"per_page"`
+	TotalPages   int             `json:"total_pages"`
+	TotalEntries int             `json:"total_entries"`
+	NextPage     *int            `json:"next_page"`
+	PreviousPage *int            `json:"previous_page"`
+	Page         int             `json:"page"`
+	Links        PaginationLinks `json:"links"`
 }
 
 // UserRef is a reference to a user in nested objects.
@@ -64,24 +64,24 @@ type ExternalReference struct {
 
 // UserAssignment represents a user's assignment to a project.
 type UserAssignment struct {
-	ID               int64      `json:"id"`
-	IsProjectManager bool       `json:"is_project_manager"`
-	IsActive         bool       `json:"is_active"`
-	Budget           *float64   `json:"budget"`
-	HourlyRate       *float64   `json:"hourly_rate"`
-	CreatedAt        time.Time  `json:"created_at"`
-	UpdatedAt        time.Time  `json:"updated_at"`
+	ID               int64     `json:"id"`
+	IsProjectManager bool      `json:"is_project_manager"`
+	IsActive         bool      `json:"is_active"`
+	Budget           *float64  `json:"budget"`
+	HourlyRate       *float64  `json:"hourly_rate"`
+	CreatedAt        time.Time `json:"created_at"`
+	UpdatedAt        time.Time `json:"updated_at"`
 }
 
 // TaskAssignment represents a task's assignment to a project.
 type TaskAssignment struct {
-	ID         int64      `json:"id"`
-	Billable   bool       `json:"billable"`
-	IsActive   bool       `json:"is_active"`
-	HourlyRate *float64   `json:"hourly_rate"`
-	Budget     *float64   `json:"budget"`
-	CreatedAt  time.Time  `json:"created_at"`
-	UpdatedAt  time.Time  `json:"updated_at"`
+	ID         int64     `json:"id"`
+	Billable   bool      `json:"billable"`
+	IsActive   bool      `json:"is_active"`
+	HourlyRate *float64  `json:"hourly_rate"`
+	Budget     *float64  `json:"budget"`
+	CreatedAt  time.Time `json:"created_at"`
+	UpdatedAt  time.Time `json:"updated_at"`
 }
 
 // TimeEntry represents a Harvest time entry.
@@ -126,30 +126,30 @@ type ProjectClientRef struct {
 
 // Project represents a Harvest project.
 type Project struct {
-	ID                              int64             `json:"id"`
-	Name                            string            `json:"name"`
-	Code                            string            `json:"code"`
-	IsActive                        bool              `json:"is_active"`
-	IsBillable                      bool              `json:"is_billable"`
-	IsFixedFee                      bool              `json:"is_fixed_fee"`
-	BillBy                          string            `json:"bill_by"`
-	HourlyRate                      *float64          `json:"hourly_rate"`
-	BudgetBy                        string            `json:"budget_by"`
-	BudgetIsMonthly                 bool              `json:"budget_is_monthly"`
-	Budget                          *float64          `json:"budget"`
-	CostBudget                      *float64          `json:"cost_budget"`
-	CostBudgetIncludeExpenses       bool              `json:"cost_budget_include_expenses"`
-	NotifyWhenOverBudget            bool              `json:"notify_when_over_budget"`
+	ID                               int64            `json:"id"`
+	Name                             string           `json:"name"`
+	Code                             string           `json:"code"`
+	IsActive                         bool             `json:"is_active"`
+	IsBillable                       bool             `json:"is_billable"`
+	IsFixedFee                       bool             `json:"is_fixed_fee"`
+	BillBy                           string           `json:"bill_by"`
+	HourlyRate                       *float64         `json:"hourly_rate"`
+	BudgetBy                         string           `json:"budget_by"`
+	BudgetIsMonthly                  bool             `json:"budget_is_monthly"`
+	Budget                           *float64         `json:"budget"`
+	CostBudget                       *float64         `json:"cost_budget"`
+	CostBudgetIncludeExpenses        bool             `json:"cost_budget_include_expenses"`
+	NotifyWhenOverBudget             bool             `json:"notify_when_over_budget"`
 	OverBudgetNotificationPercentage float64          `json:"over_budget_notification_percentage"`
-	OverBudgetNotificationDate      *string           `json:"over_budget_notification_date"`
-	ShowBudgetToAll                 bool              `json:"show_budget_to_all"`
-	Fee                             *float64          `json:"fee"`
-	Notes                           string            `json:"notes"`
-	StartsOn                        *string           `json:"starts_on"`
-	EndsOn                          *string           `json:"ends_on"`
-	Client                          ProjectClientRef  `json:"client"`
-	CreatedAt                       time.Time         `json:"created_at"`
-	UpdatedAt                       time.Time         `json:"updated_at"`
+	OverBudgetNotificationDate       *string          `json:"over_budget_notification_date"`
+	ShowBudgetToAll                  bool             `json:"show_budget_to_all"`
+	Fee                              *float64         `json:"fee"`
+	Notes                            string           `json:"notes"`
+	StartsOn                         *string          `json:"starts_on"`
+	EndsOn                           *string          `json:"ends_on"`
+	Client                           ProjectClientRef `json:"client"`
+	CreatedAt                        time.Time        `json:"created_at"`
+	UpdatedAt                        time.Time        `json:"updated_at"`
 }
 
 // Task represents a Harvest task.
@@ -166,23 +166,23 @@ type Task struct {
 
 // User represents a Harvest user.
 type User struct {
-	ID                          int64     `json:"id"`
-	FirstName                   string    `json:"first_name"`
-	LastName                    string    `json:"last_name"`
-	Email                       string    `json:"email"`
-	Telephone                   string    `json:"telephone"`
-	Timezone                    string    `json:"timezone"`
-	HasAccessToAllFutureProjects bool     `json:"has_access_to_all_future_projects"`
-	IsContractor                bool      `json:"is_contractor"`
-	IsActive                    bool      `json:"is_active"`
-	WeeklyCapacity              int       `json:"weekly_capacity"`
-	DefaultHourlyRate           *float64  `json:"default_hourly_rate"`
-	CostRate                    *float64  `json:"cost_rate"`
-	Roles                       []string  `json:"roles"`
-	AccessRoles                 []string  `json:"access_roles"`
-	AvatarURL                   string    `json:"avatar_url"`
-	CreatedAt                   time.Time `json:"created_at"`
-	UpdatedAt                   time.Time `json:"updated_at"`
+	ID                           int64     `json:"id"`
+	FirstName                    string    `json:"first_name"`
+	LastName                     string    `json:"last_name"`
+	Email                        string    `json:"email"`
+	Telephone                    string    `json:"telephone"`
+	Timezone                     string    `json:"timezone"`
+	HasAccessToAllFutureProjects bool      `json:"has_access_to_all_future_projects"`
+	IsContractor                 bool      `json:"is_contractor"`
+	IsActive                     bool      `json:"is_active"`
+	WeeklyCapacity               int       `json:"weekly_capacity"`
+	DefaultHourlyRate            *float64  `json:"default_hourly_rate"`
+	CostRate                     *float64  `json:"cost_rate"`
+	Roles                        []string  `json:"roles"`
+	AccessRoles                  []string  `json:"access_roles"`
+	AvatarURL                    string    `json:"avatar_url"`
+	CreatedAt                    time.Time `json:"created_at"`
+	UpdatedAt                    time.Time `json:"updated_at"`
 }
 
 // FullName returns the user's full name.
@@ -204,27 +204,27 @@ type HarvestClient struct {
 
 // Company represents a Harvest company/account.
 type Company struct {
-	BaseURI                 string `json:"base_uri"`
-	FullDomain              string `json:"full_domain"`
-	Name                    string `json:"name"`
-	IsActive                bool   `json:"is_active"`
-	WeekStartDay            string `json:"week_start_day"`
-	WantsTimestampTimers    bool   `json:"wants_timestamp_timers"`
-	TimeFormat              string `json:"time_format"`
-	DateFormat              string `json:"date_format"`
-	PlanType                string `json:"plan_type"`
-	Clock                   string `json:"clock"`
-	CurrencyCodeDisplay     string `json:"currency_code_display"`
-	CurrencySymbolDisplay   string `json:"currency_symbol_display"`
-	DecimalSymbol           string `json:"decimal_symbol"`
-	ThousandsSeparator      string `json:"thousands_separator"`
-	ColorScheme             string `json:"color_scheme"`
-	WeeklyCapacity          int    `json:"weekly_capacity"`
-	ExpenseFeature          bool   `json:"expense_feature"`
-	InvoiceFeature          bool   `json:"invoice_feature"`
-	EstimateFeature         bool   `json:"estimate_feature"`
-	ApprovalFeature         bool   `json:"approval_feature"`
-	TeamFeature             bool   `json:"team_feature"`
+	BaseURI               string `json:"base_uri"`
+	FullDomain            string `json:"full_domain"`
+	Name                  string `json:"name"`
+	IsActive              bool   `json:"is_active"`
+	WeekStartDay          string `json:"week_start_day"`
+	WantsTimestampTimers  bool   `json:"wants_timestamp_timers"`
+	TimeFormat            string `json:"time_format"`
+	DateFormat            string `json:"date_format"`
+	PlanType              string `json:"plan_type"`
+	Clock                 string `json:"clock"`
+	CurrencyCodeDisplay   string `json:"currency_code_display"`
+	CurrencySymbolDisplay string `json:"currency_symbol_display"`
+	DecimalSymbol         string `json:"decimal_symbol"`
+	ThousandsSeparator    string `json:"thousands_separator"`
+	ColorScheme           string `json:"color_scheme"`
+	WeeklyCapacity        int    `json:"weekly_capacity"`
+	ExpenseFeature        bool   `json:"expense_feature"`
+	InvoiceFeature        bool   `json:"invoice_feature"`
+	EstimateFeature       bool   `json:"estimate_feature"`
+	ApprovalFeature       bool   `json:"approval_feature"`
+	TeamFeature           bool   `json:"team_feature"`
 }
 
 // TimeEntryInput is used to create or update a time entry.
@@ -242,26 +242,26 @@ type TimeEntryInput struct {
 
 // ProjectInput is used to create or update a project.
 type ProjectInput struct {
-	ClientID                        int64    `json:"client_id,omitempty"`
-	Name                            string   `json:"name,omitempty"`
-	Code                            *string  `json:"code,omitempty"`
-	IsActive                        *bool    `json:"is_active,omitempty"`
-	IsBillable                      *bool    `json:"is_billable,omitempty"`
-	IsFixedFee                      *bool    `json:"is_fixed_fee,omitempty"`
-	BillBy                          string   `json:"bill_by,omitempty"`
-	HourlyRate                      *float64 `json:"hourly_rate,omitempty"`
-	BudgetBy                        string   `json:"budget_by,omitempty"`
-	BudgetIsMonthly                 *bool    `json:"budget_is_monthly,omitempty"`
-	Budget                          *float64 `json:"budget,omitempty"`
-	CostBudget                      *float64 `json:"cost_budget,omitempty"`
-	CostBudgetIncludeExpenses       *bool    `json:"cost_budget_include_expenses,omitempty"`
-	NotifyWhenOverBudget            *bool    `json:"notify_when_over_budget,omitempty"`
+	ClientID                         int64    `json:"client_id,omitempty"`
+	Name                             string   `json:"name,omitempty"`
+	Code                             *string  `json:"code,omitempty"`
+	IsActive                         *bool    `json:"is_active,omitempty"`
+	IsBillable                       *bool    `json:"is_billable,omitempty"`
+	IsFixedFee                       *bool    `json:"is_fixed_fee,omitempty"`
+	BillBy                           string   `json:"bill_by,omitempty"`
+	HourlyRate                       *float64 `json:"hourly_rate,omitempty"`
+	BudgetBy                         string   `json:"budget_by,omitempty"`
+	BudgetIsMonthly                  *bool    `json:"budget_is_monthly,omitempty"`
+	Budget                           *float64 `json:"budget,omitempty"`
+	CostBudget                       *float64 `json:"cost_budget,omitempty"`
+	CostBudgetIncludeExpenses        *bool    `json:"cost_budget_include_expenses,omitempty"`
+	NotifyWhenOverBudget             *bool    `json:"notify_when_over_budget,omitempty"`
 	OverBudgetNotificationPercentage *float64 `json:"over_budget_notification_percentage,omitempty"`
-	ShowBudgetToAll                 *bool    `json:"show_budget_to_all,omitempty"`
-	Fee                             *float64 `json:"fee,omitempty"`
-	Notes                           *string  `json:"notes,omitempty"`
-	StartsOn                        *string  `json:"starts_on,omitempty"`
-	EndsOn                          *string  `json:"ends_on,omitempty"`
+	ShowBudgetToAll                  *bool    `json:"show_budget_to_all,omitempty"`
+	Fee                              *float64 `json:"fee,omitempty"`
+	Notes                            *string  `json:"notes,omitempty"`
+	StartsOn                         *string  `json:"starts_on,omitempty"`
+	EndsOn                           *string  `json:"ends_on,omitempty"`
 }
 
 // TaskInput is used to create or update a task.
@@ -283,32 +283,32 @@ type ClientInput struct {
 
 // UserInput is used to create or update a user.
 type UserInput struct {
-	FirstName                   string   `json:"first_name,omitempty"`
-	LastName                    string   `json:"last_name,omitempty"`
-	Email                       string   `json:"email,omitempty"`
-	Timezone                    *string  `json:"timezone,omitempty"`
-	HasAccessToAllFutureProjects *bool   `json:"has_access_to_all_future_projects,omitempty"`
-	IsContractor                *bool    `json:"is_contractor,omitempty"`
-	IsActive                    *bool    `json:"is_active,omitempty"`
-	WeeklyCapacity              *int     `json:"weekly_capacity,omitempty"`
-	DefaultHourlyRate           *float64 `json:"default_hourly_rate,omitempty"`
-	CostRate                    *float64 `json:"cost_rate,omitempty"`
-	Roles                       []string `json:"roles,omitempty"`
-	AccessRoles                 []string `json:"access_roles,omitempty"`
+	FirstName                    string   `json:"first_name,omitempty"`
+	LastName                     string   `json:"last_name,omitempty"`
+	Email                        string   `json:"email,omitempty"`
+	Timezone                     *string  `json:"timezone,omitempty"`
+	HasAccessToAllFutureProjects *bool    `json:"has_access_to_all_future_projects,omitempty"`
+	IsContractor                 *bool    `json:"is_contractor,omitempty"`
+	IsActive                     *bool    `json:"is_active,omitempty"`
+	WeeklyCapacity               *int     `json:"weekly_capacity,omitempty"`
+	DefaultHourlyRate            *float64 `json:"default_hourly_rate,omitempty"`
+	CostRate                     *float64 `json:"cost_rate,omitempty"`
+	Roles                        []string `json:"roles,omitempty"`
+	AccessRoles                  []string `json:"access_roles,omitempty"`
 }
 
 // ProjectAssignment represents a user's assignment to a project (from my/project_assignments).
 type ProjectAssignment struct {
-	ID               int64                        `json:"id"`
-	IsProjectManager bool                         `json:"is_project_manager"`
-	IsActive         bool                         `json:"is_active"`
-	Budget           *float64                     `json:"budget"`
-	HourlyRate       *float64                     `json:"hourly_rate"`
-	CreatedAt        time.Time                    `json:"created_at"`
-	UpdatedAt        time.Time                    `json:"updated_at"`
-	Project          ProjectRef                   `json:"project"`
-	Client           ClientRef                    `json:"client"`
-	TaskAssignments  []ProjectTaskAssignment      `json:"task_assignments"`
+	ID               int64                   `json:"id"`
+	IsProjectManager bool                    `json:"is_project_manager"`
+	IsActive         bool                    `json:"is_active"`
+	Budget           *float64                `json:"budget"`
+	HourlyRate       *float64                `json:"hourly_rate"`
+	CreatedAt        time.Time               `json:"created_at"`
+	UpdatedAt        time.Time               `json:"updated_at"`
+	Project          ProjectRef              `json:"project"`
+	Client           ClientRef               `json:"client"`
+	TaskAssignments  []ProjectTaskAssignment `json:"task_assignments"`
 }
 
 // ProjectTaskAssignment represents a task assignment within a project assignment.
@@ -387,15 +387,15 @@ type ExpenseInput struct {
 
 // EstimateLineItem represents a line item on an estimate.
 type EstimateLineItem struct {
-	ID          int64    `json:"id,omitempty"`
-	Kind        string   `json:"kind"`
-	Description string   `json:"description,omitempty"`
-	Quantity    float64  `json:"quantity,omitempty"`
-	UnitPrice   float64  `json:"unit_price"`
-	Amount      float64  `json:"amount,omitempty"`
-	Taxed       bool     `json:"taxed,omitempty"`
-	Taxed2      bool     `json:"taxed2,omitempty"`
-	Destroy     bool     `json:"_destroy,omitempty"`
+	ID          int64   `json:"id,omitempty"`
+	Kind        string  `json:"kind"`
+	Description string  `json:"description,omitempty"`
+	Quantity    float64 `json:"quantity,omitempty"`
+	UnitPrice   float64 `json:"unit_price"`
+	Amount      float64 `json:"amount,omitempty"`
+	Taxed       bool    `json:"taxed,omitempty"`
+	Taxed2      bool    `json:"taxed2,omitempty"`
+	Destroy     bool    `json:"_destroy,omitempty"`
 }
 
 // Estimate represents a Harvest estimate.

@@ -58,9 +58,7 @@ func (m confirmModel) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 }
 
 func (m confirmModel) View() string {
-	yes := "Yes"
-	no := "No"
-
+	var yes, no string
 	if m.selected {
 		yes = SelectedStyle.Render("[Yes]")
 		no = DimStyle.Render(" No ")

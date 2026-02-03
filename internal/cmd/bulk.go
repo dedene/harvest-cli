@@ -296,7 +296,7 @@ func validateImportRows(ctx context.Context, client *api.Client, rows []importRo
 	// Cache for resolved IDs
 	projectCache := make(map[string]int64)
 	projectNames := make(map[int64]string)
-	taskCache := make(map[string]int64)   // key: "projectID:task"
+	taskCache := make(map[string]int64) // key: "projectID:task"
 	taskNames := make(map[int64]string)
 
 	for _, row := range rows {

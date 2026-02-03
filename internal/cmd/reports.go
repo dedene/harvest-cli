@@ -14,10 +14,10 @@ import (
 
 // ReportsCmd groups report subcommands.
 type ReportsCmd struct {
-	Time      ReportsTimeCmd      `cmd:"" help:"Time reports"`
-	Expenses  ReportsExpensesCmd  `cmd:"" help:"Expense reports"`
+	Time       ReportsTimeCmd       `cmd:"" help:"Time reports"`
+	Expenses   ReportsExpensesCmd   `cmd:"" help:"Expense reports"`
 	Uninvoiced ReportsUninvoicedCmd `cmd:"" help:"Uninvoiced amounts report"`
-	Budget    ReportsBudgetCmd    `cmd:"" help:"Project budget report"`
+	Budget     ReportsBudgetCmd     `cmd:"" help:"Project budget report"`
 }
 
 // ReportsTimeCmd generates time reports.

@@ -10,17 +10,17 @@ import (
 
 // InvoicePayment represents a payment on an invoice.
 type InvoicePayment struct {
-	ID               int64      `json:"id"`
-	Amount           float64    `json:"amount"`
-	PaidAt           time.Time  `json:"paid_at"`
-	PaidDate         string     `json:"paid_date"`
-	RecordedBy       string     `json:"recorded_by"`
-	RecordedByEmail  string     `json:"recorded_by_email"`
-	Notes            string     `json:"notes"`
-	TransactionID    string     `json:"transaction_id"`
-	PaymentGateway   *PaymentGatewayRef `json:"payment_gateway"`
-	CreatedAt        time.Time  `json:"created_at"`
-	UpdatedAt        time.Time  `json:"updated_at"`
+	ID              int64              `json:"id"`
+	Amount          float64            `json:"amount"`
+	PaidAt          time.Time          `json:"paid_at"`
+	PaidDate        string             `json:"paid_date"`
+	RecordedBy      string             `json:"recorded_by"`
+	RecordedByEmail string             `json:"recorded_by_email"`
+	Notes           string             `json:"notes"`
+	TransactionID   string             `json:"transaction_id"`
+	PaymentGateway  *PaymentGatewayRef `json:"payment_gateway"`
+	CreatedAt       time.Time          `json:"created_at"`
+	UpdatedAt       time.Time          `json:"updated_at"`
 }
 
 // PaymentGatewayRef is a reference to a payment gateway.

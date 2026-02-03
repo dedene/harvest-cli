@@ -20,15 +20,15 @@ func TestGetMe(t *testing.T) {
 		}
 
 		user := User{
-			ID:              12345,
-			FirstName:       "Test",
-			LastName:        "User",
-			Email:           "test@example.com",
-			Timezone:        "Eastern Time (US & Canada)",
-			IsActive:        true,
-			WeeklyCapacity:  126000,
-			Roles:           []string{"Developer"},
-			AccessRoles:     []string{"member"},
+			ID:             12345,
+			FirstName:      "Test",
+			LastName:       "User",
+			Email:          "test@example.com",
+			Timezone:       "Eastern Time (US & Canada)",
+			IsActive:       true,
+			WeeklyCapacity: 126000,
+			Roles:          []string{"Developer"},
+			AccessRoles:    []string{"member"},
 		}
 		w.Header().Set("Content-Type", "application/json")
 		json.NewEncoder(w).Encode(user)

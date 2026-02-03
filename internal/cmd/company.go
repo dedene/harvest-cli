@@ -12,9 +12,9 @@ import (
 
 // CompanyCmd shows company information.
 type CompanyCmd struct {
-	Edit               bool `help:"Edit company settings" short:"e"`
-	WantsTimestamps    *bool `help:"Enable timestamp timers (with --edit)" name:"timestamps"`
-	WeeklyCapacity     *int  `help:"Weekly capacity in seconds (with --edit)" name:"weekly-capacity"`
+	Edit            bool  `help:"Edit company settings" short:"e"`
+	WantsTimestamps *bool `help:"Enable timestamp timers (with --edit)" name:"timestamps"`
+	WeeklyCapacity  *int  `help:"Weekly capacity in seconds (with --edit)" name:"weekly-capacity"`
 }
 
 func (c *CompanyCmd) Run(cli *CLI) error {

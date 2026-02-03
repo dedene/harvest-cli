@@ -76,10 +76,10 @@ func (c *ClientsShowCmd) Run(cli *CLI) error {
 
 // ClientsAddCmd creates a new client.
 type ClientsAddCmd struct {
-	Name     string  `arg:"" help:"Client name"`
-	Address  string  `help:"Client address"`
-	Currency string  `help:"Currency code (e.g., USD, EUR)"`
-	Active   *bool   `help:"Is active (default: true)"`
+	Name     string `arg:"" help:"Client name"`
+	Address  string `help:"Client address"`
+	Currency string `help:"Currency code (e.g., USD, EUR)"`
+	Active   *bool  `help:"Is active (default: true)"`
 }
 
 func (c *ClientsAddCmd) Run(cli *CLI) error {
@@ -115,11 +115,11 @@ func (c *ClientsAddCmd) Run(cli *CLI) error {
 
 // ClientsEditCmd updates an existing client.
 type ClientsEditCmd struct {
-	ID       int64   `arg:"" help:"Client ID"`
-	Name     string  `help:"Client name"`
-	Address  string  `help:"Client address"`
-	Currency string  `help:"Currency code"`
-	Active   *bool   `help:"Is active"`
+	ID       int64  `arg:"" help:"Client ID"`
+	Name     string `help:"Client name"`
+	Address  string `help:"Client address"`
+	Currency string `help:"Currency code"`
+	Active   *bool  `help:"Is active"`
 }
 
 func (c *ClientsEditCmd) Run(cli *CLI) error {

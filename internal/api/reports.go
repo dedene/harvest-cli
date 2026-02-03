@@ -50,21 +50,21 @@ type TimeReportsResponse struct {
 
 // TimeReportResult represents a single row in a time report.
 type TimeReportResult struct {
-	ClientID          int64   `json:"client_id,omitempty"`
-	ClientName        string  `json:"client_name,omitempty"`
-	ProjectID         int64   `json:"project_id,omitempty"`
-	ProjectName       string  `json:"project_name,omitempty"`
-	TaskID            int64   `json:"task_id,omitempty"`
-	TaskName          string  `json:"task_name,omitempty"`
-	UserID            int64   `json:"user_id,omitempty"`
-	UserName          string  `json:"user_name,omitempty"`
-	TotalHours        float64 `json:"total_hours"`
-	BillableHours     float64 `json:"billable_hours"`
-	Currency          string  `json:"currency,omitempty"`
-	BillableAmount    float64 `json:"billable_amount"`
-	WeeklyCapacity    int     `json:"weekly_capacity,omitempty"`
-	AvatarURL         string  `json:"avatar_url,omitempty"`
-	IsContractor      bool    `json:"is_contractor,omitempty"`
+	ClientID       int64   `json:"client_id,omitempty"`
+	ClientName     string  `json:"client_name,omitempty"`
+	ProjectID      int64   `json:"project_id,omitempty"`
+	ProjectName    string  `json:"project_name,omitempty"`
+	TaskID         int64   `json:"task_id,omitempty"`
+	TaskName       string  `json:"task_name,omitempty"`
+	UserID         int64   `json:"user_id,omitempty"`
+	UserName       string  `json:"user_name,omitempty"`
+	TotalHours     float64 `json:"total_hours"`
+	BillableHours  float64 `json:"billable_hours"`
+	Currency       string  `json:"currency,omitempty"`
+	BillableAmount float64 `json:"billable_amount"`
+	WeeklyCapacity int     `json:"weekly_capacity,omitempty"`
+	AvatarURL      string  `json:"avatar_url,omitempty"`
+	IsContractor   bool    `json:"is_contractor,omitempty"`
 }
 
 // ExpenseReportsResponse is the paginated response for expense reports.
@@ -81,18 +81,18 @@ type ExpenseReportsResponse struct {
 
 // ExpenseReportResult represents a single row in an expense report.
 type ExpenseReportResult struct {
-	ClientID           int64   `json:"client_id,omitempty"`
-	ClientName         string  `json:"client_name,omitempty"`
-	ProjectID          int64   `json:"project_id,omitempty"`
-	ProjectName        string  `json:"project_name,omitempty"`
-	ExpenseCategoryID  int64   `json:"expense_category_id,omitempty"`
-	ExpenseCategoryName string `json:"expense_category_name,omitempty"`
-	UserID             int64   `json:"user_id,omitempty"`
-	UserName           string  `json:"user_name,omitempty"`
-	TotalAmount        float64 `json:"total_amount"`
-	BillableAmount     float64 `json:"billable_amount"`
-	Currency           string  `json:"currency,omitempty"`
-	IsContractor       bool    `json:"is_contractor,omitempty"`
+	ClientID            int64   `json:"client_id,omitempty"`
+	ClientName          string  `json:"client_name,omitempty"`
+	ProjectID           int64   `json:"project_id,omitempty"`
+	ProjectName         string  `json:"project_name,omitempty"`
+	ExpenseCategoryID   int64   `json:"expense_category_id,omitempty"`
+	ExpenseCategoryName string  `json:"expense_category_name,omitempty"`
+	UserID              int64   `json:"user_id,omitempty"`
+	UserName            string  `json:"user_name,omitempty"`
+	TotalAmount         float64 `json:"total_amount"`
+	BillableAmount      float64 `json:"billable_amount"`
+	Currency            string  `json:"currency,omitempty"`
+	IsContractor        bool    `json:"is_contractor,omitempty"`
 }
 
 // UninvoicedReportResponse is the paginated response for uninvoiced reports.
@@ -109,15 +109,15 @@ type UninvoicedReportResponse struct {
 
 // UninvoicedReportResult represents a single row in an uninvoiced report.
 type UninvoicedReportResult struct {
-	ClientID              int64   `json:"client_id"`
-	ClientName            string  `json:"client_name"`
-	ProjectID             int64   `json:"project_id"`
-	ProjectName           string  `json:"project_name"`
-	Currency              string  `json:"currency"`
-	TotalHours            float64 `json:"total_hours"`
-	UninvoicedHours       float64 `json:"uninvoiced_hours"`
-	UninvoicedExpenses    float64 `json:"uninvoiced_expenses"`
-	UninvoicedAmount      float64 `json:"uninvoiced_amount"`
+	ClientID           int64   `json:"client_id"`
+	ClientName         string  `json:"client_name"`
+	ProjectID          int64   `json:"project_id"`
+	ProjectName        string  `json:"project_name"`
+	Currency           string  `json:"currency"`
+	TotalHours         float64 `json:"total_hours"`
+	UninvoicedHours    float64 `json:"uninvoiced_hours"`
+	UninvoicedExpenses float64 `json:"uninvoiced_expenses"`
+	UninvoicedAmount   float64 `json:"uninvoiced_amount"`
 }
 
 // ProjectBudgetReportResponse is the paginated response for project budget reports.
@@ -134,16 +134,16 @@ type ProjectBudgetReportResponse struct {
 
 // ProjectBudgetReportResult represents a single row in a project budget report.
 type ProjectBudgetReportResult struct {
-	ProjectID          int64    `json:"project_id"`
-	ProjectName        string   `json:"project_name"`
-	ClientID           int64    `json:"client_id"`
-	ClientName         string   `json:"client_name"`
-	BudgetIsMonthly    bool     `json:"budget_is_monthly"`
-	BudgetBy           string   `json:"budget_by"`
-	IsActive           bool     `json:"is_active"`
-	Budget             *float64 `json:"budget"`
-	BudgetSpent        float64  `json:"budget_spent"`
-	BudgetRemaining    float64  `json:"budget_remaining"`
+	ProjectID       int64    `json:"project_id"`
+	ProjectName     string   `json:"project_name"`
+	ClientID        int64    `json:"client_id"`
+	ClientName      string   `json:"client_name"`
+	BudgetIsMonthly bool     `json:"budget_is_monthly"`
+	BudgetBy        string   `json:"budget_by"`
+	IsActive        bool     `json:"is_active"`
+	Budget          *float64 `json:"budget"`
+	BudgetSpent     float64  `json:"budget_spent"`
+	BudgetRemaining float64  `json:"budget_remaining"`
 }
 
 // GetReportsLimiterStatus returns current reports rate limit status.

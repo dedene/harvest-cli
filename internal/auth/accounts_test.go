@@ -114,8 +114,8 @@ func TestFetchAccounts_ServerError(t *testing.T) {
 func TestSelectAccount_SingleAccount(t *testing.T) {
 	accounts := []HarvestAccount{
 		{
-			ID:   123,
-			Name: "Test Account",
+			ID:      123,
+			Name:    "Test Account",
 			Product: "harvest",
 		},
 	}

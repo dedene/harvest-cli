@@ -127,11 +127,11 @@ func parseWeekStartDay(day string) time.Weekday {
 
 func (c *DashboardCmd) outputJSON(d *ui.DashboardModel) error {
 	data := map[string]any{
-		"week_start":   d.WeekStart.Format("2006-01-02"),
-		"today_hours":  d.TodayHours,
-		"week_hours":   d.WeekHours,
-		"week_target":  d.WeekTarget,
-		"daily_hours":  d.DailyHours,
+		"week_start":  d.WeekStart.Format("2006-01-02"),
+		"today_hours": d.TodayHours,
+		"week_hours":  d.WeekHours,
+		"week_target": d.WeekTarget,
+		"daily_hours": d.DailyHours,
 	}
 
 	if d.Running != nil {

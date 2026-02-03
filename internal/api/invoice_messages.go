@@ -10,23 +10,23 @@ import (
 
 // InvoiceMessage represents a message/email sent for an invoice.
 type InvoiceMessage struct {
-	ID                    int64                   `json:"id"`
-	SentBy                string                  `json:"sent_by"`
-	SentByEmail           string                  `json:"sent_by_email"`
-	SentFrom              string                  `json:"sent_from"`
-	SentFromEmail         string                  `json:"sent_from_email"`
-	Recipients            []InvoiceMessageRecipient `json:"recipients"`
-	Subject               string                  `json:"subject"`
-	Body                  string                  `json:"body"`
-	IncludeLinkToClientInvoice bool               `json:"include_link_to_client_invoice"`
-	AttachPDF             bool                    `json:"attach_pdf"`
-	SendMeACopy           bool                    `json:"send_me_a_copy"`
-	ThankYou              bool                    `json:"thank_you"`
-	EventType             string                  `json:"event_type"`
-	Reminder              bool                    `json:"reminder"`
-	SendReminderOn        *string                 `json:"send_reminder_on"`
-	CreatedAt             time.Time               `json:"created_at"`
-	UpdatedAt             time.Time               `json:"updated_at"`
+	ID                         int64                     `json:"id"`
+	SentBy                     string                    `json:"sent_by"`
+	SentByEmail                string                    `json:"sent_by_email"`
+	SentFrom                   string                    `json:"sent_from"`
+	SentFromEmail              string                    `json:"sent_from_email"`
+	Recipients                 []InvoiceMessageRecipient `json:"recipients"`
+	Subject                    string                    `json:"subject"`
+	Body                       string                    `json:"body"`
+	IncludeLinkToClientInvoice bool                      `json:"include_link_to_client_invoice"`
+	AttachPDF                  bool                      `json:"attach_pdf"`
+	SendMeACopy                bool                      `json:"send_me_a_copy"`
+	ThankYou                   bool                      `json:"thank_you"`
+	EventType                  string                    `json:"event_type"`
+	Reminder                   bool                      `json:"reminder"`
+	SendReminderOn             *string                   `json:"send_reminder_on"`
+	CreatedAt                  time.Time                 `json:"created_at"`
+	UpdatedAt                  time.Time                 `json:"updated_at"`
 }
 
 // InvoiceMessageRecipient represents a recipient of an invoice message.
@@ -74,14 +74,14 @@ func (o InvoiceMessageListOptions) QueryParams() string {
 
 // InvoiceMessageInput is used to create an invoice message (send email).
 type InvoiceMessageInput struct {
-	EventType                   string                    `json:"event_type,omitempty"`
-	Recipients                  []InvoiceMessageRecipient `json:"recipients,omitempty"`
-	Subject                     string                    `json:"subject,omitempty"`
-	Body                        string                    `json:"body,omitempty"`
-	IncludeLinkToClientInvoice  *bool                     `json:"include_link_to_client_invoice,omitempty"`
-	AttachPDF                   *bool                     `json:"attach_pdf,omitempty"`
-	SendMeACopy                 *bool                     `json:"send_me_a_copy,omitempty"`
-	ThankYou                    *bool                     `json:"thank_you,omitempty"`
+	EventType                  string                    `json:"event_type,omitempty"`
+	Recipients                 []InvoiceMessageRecipient `json:"recipients,omitempty"`
+	Subject                    string                    `json:"subject,omitempty"`
+	Body                       string                    `json:"body,omitempty"`
+	IncludeLinkToClientInvoice *bool                     `json:"include_link_to_client_invoice,omitempty"`
+	AttachPDF                  *bool                     `json:"attach_pdf,omitempty"`
+	SendMeACopy                *bool                     `json:"send_me_a_copy,omitempty"`
+	ThankYou                   *bool                     `json:"thank_you,omitempty"`
 }
 
 // ListInvoiceMessages returns a paginated list of messages for an invoice.

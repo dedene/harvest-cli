@@ -396,18 +396,18 @@ func TestTimeEntryListOptions_QueryParams(t *testing.T) {
 			opts: TimeEntryListOptions{},
 		},
 		{
-			name: "from and to",
-			opts: TimeEntryListOptions{From: "2024-01-01", To: "2024-01-31"},
+			name:     "from and to",
+			opts:     TimeEntryListOptions{From: "2024-01-01", To: "2024-01-31"},
 			contains: []string{"from=2024-01-01", "to=2024-01-31"},
 		},
 		{
-			name: "user_id",
-			opts: TimeEntryListOptions{UserID: 123},
+			name:     "user_id",
+			opts:     TimeEntryListOptions{UserID: 123},
 			contains: []string{"user_id=123"},
 		},
 		{
-			name: "approval_status",
-			opts: TimeEntryListOptions{ApprovalStatus: "submitted"},
+			name:     "approval_status",
+			opts:     TimeEntryListOptions{ApprovalStatus: "submitted"},
 			contains: []string{"approval_status=submitted"},
 		},
 	}

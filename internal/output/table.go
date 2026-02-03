@@ -63,8 +63,7 @@ func (t *Table) RowCount() int {
 
 // TableBuilder provides a fluent interface for building tables.
 type TableBuilder struct {
-	table   *Table
-	headers []string
+	table *Table
 }
 
 // NewTableBuilder creates a new table builder.

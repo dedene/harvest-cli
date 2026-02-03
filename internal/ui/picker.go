@@ -171,8 +171,8 @@ type ProjectItem struct {
 	Code        string
 }
 
-func (p ProjectItem) ID() int64       { return p.ProjectID }
-func (p ProjectItem) Title() string   { return p.ProjectName }
+func (p ProjectItem) ID() int64     { return p.ProjectID }
+func (p ProjectItem) Title() string { return p.ProjectName }
 func (p ProjectItem) Description() string {
 	parts := []string{}
 	if p.ClientName != "" {
@@ -191,8 +191,8 @@ type TaskItem struct {
 	Billable bool
 }
 
-func (t TaskItem) ID() int64       { return t.TaskID }
-func (t TaskItem) Title() string   { return t.TaskName }
+func (t TaskItem) ID() int64     { return t.TaskID }
+func (t TaskItem) Title() string { return t.TaskName }
 func (t TaskItem) Description() string {
 	if t.Billable {
 		return "billable"
@@ -206,8 +206,8 @@ type ClientItem struct {
 	ClientName string
 }
 
-func (c ClientItem) ID() int64         { return c.ClientID }
-func (c ClientItem) Title() string     { return c.ClientName }
+func (c ClientItem) ID() int64           { return c.ClientID }
+func (c ClientItem) Title() string       { return c.ClientName }
 func (c ClientItem) Description() string { return "" }
 
 // UserItem implements PickerItem for Harvest users.
@@ -218,8 +218,8 @@ type UserItem struct {
 	Email     string
 }
 
-func (u UserItem) ID() int64       { return u.UserID }
-func (u UserItem) Title() string   { return fmt.Sprintf("%s %s", u.FirstName, u.LastName) }
+func (u UserItem) ID() int64           { return u.UserID }
+func (u UserItem) Title() string       { return fmt.Sprintf("%s %s", u.FirstName, u.LastName) }
 func (u UserItem) Description() string { return u.Email }
 
 // PickProject shows a project picker and returns the selected project.

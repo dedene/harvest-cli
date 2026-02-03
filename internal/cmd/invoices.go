@@ -119,18 +119,18 @@ func (c *InvoicesShowCmd) Run(cli *CLI) error {
 
 // InvoicesAddCmd creates a new invoice.
 type InvoicesAddCmd struct {
-	HarvestClient string   `help:"Client ID or name (required)" name:"harvest-client" short:"c" required:""`
-	Number        string   `help:"Invoice number"`
-	Subject       string   `help:"Invoice subject"`
-	Notes         string   `help:"Invoice notes"`
-	IssueDate     string   `help:"Issue date (default: today)"`
-	DueDate       string   `help:"Due date"`
-	PaymentTerm   string   `help:"Payment term: upon receipt, net 15, net 30, net 45, net 60, custom" default:"" enum:",upon receipt,net 15,net 30,net 45,net 60,custom"`
-	Currency      string   `help:"Currency code (e.g., USD, EUR)"`
-	Tax           float64  `help:"Tax percentage"`
-	Tax2          float64  `help:"Tax2 percentage"`
-	Discount      float64  `help:"Discount percentage"`
-	PurchaseOrder string   `help:"Purchase order number"`
+	HarvestClient string  `help:"Client ID or name (required)" name:"harvest-client" short:"c" required:""`
+	Number        string  `help:"Invoice number"`
+	Subject       string  `help:"Invoice subject"`
+	Notes         string  `help:"Invoice notes"`
+	IssueDate     string  `help:"Issue date (default: today)"`
+	DueDate       string  `help:"Due date"`
+	PaymentTerm   string  `help:"Payment term: upon receipt, net 15, net 30, net 45, net 60, custom" default:"" enum:",upon receipt,net 15,net 30,net 45,net 60,custom"`
+	Currency      string  `help:"Currency code (e.g., USD, EUR)"`
+	Tax           float64 `help:"Tax percentage"`
+	Tax2          float64 `help:"Tax2 percentage"`
+	Discount      float64 `help:"Discount percentage"`
+	PurchaseOrder string  `help:"Purchase order number"`
 }
 
 func (c *InvoicesAddCmd) Run(cli *CLI) error {

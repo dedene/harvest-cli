@@ -153,19 +153,19 @@ func (c *TimeShowCmd) Run(cli *CLI) error {
 
 // TimeAddCmd creates a new time entry.
 type TimeAddCmd struct {
-	Project        string `help:"Project ID or name" short:"p"`
-	Task           string `help:"Task ID or name"`
-	Date           string `help:"Date (default: today)" short:"d"`
-	Hours          float64 `help:"Hours (duration mode)" short:"h"`
-	Start          string `help:"Start time (timestamp mode)"`
-	End            string `help:"End time (timestamp mode)"`
-	Notes          string `help:"Notes" short:"n"`
-	Duration       bool   `help:"Use duration mode (hours)"`
-	Timestamp      bool   `help:"Use timestamp mode (start/end)"`
-	ExtRefID       string `help:"External reference ID (e.g., JIRA-123)" name:"external-ref-id"`
-	ExtRefGroupID  string `help:"External reference group ID" name:"external-ref-group-id"`
-	ExtRefURL      string `help:"External reference URL" name:"external-ref-url"`
-	ExtRefService  string `help:"External reference service name (e.g., jira, asana)" name:"external-ref-service"`
+	Project       string  `help:"Project ID or name" short:"p"`
+	Task          string  `help:"Task ID or name"`
+	Date          string  `help:"Date (default: today)" short:"d"`
+	Hours         float64 `help:"Hours (duration mode)" short:"h"`
+	Start         string  `help:"Start time (timestamp mode)"`
+	End           string  `help:"End time (timestamp mode)"`
+	Notes         string  `help:"Notes" short:"n"`
+	Duration      bool    `help:"Use duration mode (hours)"`
+	Timestamp     bool    `help:"Use timestamp mode (start/end)"`
+	ExtRefID      string  `help:"External reference ID (e.g., JIRA-123)" name:"external-ref-id"`
+	ExtRefGroupID string  `help:"External reference group ID" name:"external-ref-group-id"`
+	ExtRefURL     string  `help:"External reference URL" name:"external-ref-url"`
+	ExtRefService string  `help:"External reference service name (e.g., jira, asana)" name:"external-ref-service"`
 }
 
 func (c *TimeAddCmd) Run(cli *CLI) error {
@@ -313,18 +313,18 @@ func (c *TimeAddCmd) runWizard(ctx context.Context, client *api.Client, cli *CLI
 
 // TimeEditCmd updates an existing time entry.
 type TimeEditCmd struct {
-	ID             int64   `arg:"" help:"Time entry ID"`
-	Project        string  `help:"Project ID or name"`
-	Task           string  `help:"Task ID or name"`
-	Date           string  `help:"Date"`
-	Hours          float64 `help:"Hours"`
-	Start          string  `help:"Start time"`
-	End            string  `help:"End time"`
-	Notes          string  `help:"Notes"`
-	ExtRefID       string  `help:"External reference ID (e.g., JIRA-123)" name:"external-ref-id"`
-	ExtRefGroupID  string  `help:"External reference group ID" name:"external-ref-group-id"`
-	ExtRefURL      string  `help:"External reference URL" name:"external-ref-url"`
-	ExtRefService  string  `help:"External reference service name (e.g., jira, asana)" name:"external-ref-service"`
+	ID            int64   `arg:"" help:"Time entry ID"`
+	Project       string  `help:"Project ID or name"`
+	Task          string  `help:"Task ID or name"`
+	Date          string  `help:"Date"`
+	Hours         float64 `help:"Hours"`
+	Start         string  `help:"Start time"`
+	End           string  `help:"End time"`
+	Notes         string  `help:"Notes"`
+	ExtRefID      string  `help:"External reference ID (e.g., JIRA-123)" name:"external-ref-id"`
+	ExtRefGroupID string  `help:"External reference group ID" name:"external-ref-group-id"`
+	ExtRefURL     string  `help:"External reference URL" name:"external-ref-url"`
+	ExtRefService string  `help:"External reference service name (e.g., jira, asana)" name:"external-ref-service"`
 }
 
 func (c *TimeEditCmd) Run(cli *CLI) error {
