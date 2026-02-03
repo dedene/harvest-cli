@@ -1,0 +1,39 @@
+# Binaries
+/harvest
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary
+*.test
+
+# Output
+dist/
+bin/
+
+# Go
+vendor/
+go.work
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Config (local testing)
+.config/
+
+# Coverage
+coverage.out
+coverage.html
+
+# Local/private
+tmp/

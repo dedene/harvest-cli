@@ -1,0 +1,96 @@
+version: 2
+
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - id: darwin
+    main: ./cmd/harvest
+    binary: harvest
+    goos:
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    env:
+      - CGO_ENABLED=1
+    ldflags:
+      - -s -w
+      - -X github.com/dedene/harvest-cli/internal/cmd.Version={{.Version}}
+      - -X github.com/dedene/harvest-cli/internal/cmd.Commit={{.Commit}}
+      - -X github.com/dedene/harvest-cli/internal/cmd.Date={{.Date}}
+
+  - id: linux
+    main: ./cmd/harvest
+    binary: harvest
+    goos:
+      - linux
+    goarch:
+      - amd64
+      - arm64
+    env:
+      - CGO_ENABLED=0
+    ldflags:
+      - -s -w
+      - -X github.com/dedene/harvest-cli/internal/cmd.Version={{.Version}}
+      - -X github.com/dedene/harvest-cli/internal/cmd.Commit={{.Commit}}
+      - -X github.com/dedene/harvest-cli/internal/cmd.Date={{.Date}}
+
+  - id: windows
+    main: ./cmd/harvest
+    binary: harvest
+    goos:
+      - windows
+    goarch:
+      - amd64
+      - arm64
+    env:
+      - CGO_ENABLED=0
+    ldflags:
+      - -s -w
+      - -X github.com/dedene/harvest-cli/internal/cmd.Version={{.Version}}
+      - -X github.com/dedene/harvest-cli/internal/cmd.Commit={{.Commit}}
+      - -X github.com/dedene/harvest-cli/internal/cmd.Date={{.Date}}
+
+archives:
+  - id: default
+    formats:
+      - tar.gz
+    format_overrides:
+      - goos: windows
+        formats:
+          - zip
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+
+checksum:
+  name_template: "checksums.txt"
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
+      - "^chore:"
+
+brews:
+  - name: harvestcli
+    repository:
+      owner: dedene
+      name: homebrew-tap
+    directory: Formula
+    homepage: https://github.com/dedene/harvest-cli
+    description: Harvest time tracking CLI
+    license: MIT
+    install: |
+      bin.install "harvest"
+    test: |
+      system "#{bin}/harvest", "version"
+
+release:
+  github:
+    owner: dedene
+    name: harvest-cli
+  draft: false
+  prerelease: auto
