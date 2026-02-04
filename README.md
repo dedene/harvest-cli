@@ -1,4 +1,4 @@
-# 🏦 harvest-cli - Harvest in your terminal
+# ⏱️ harvest-cli - Harvest in your terminal
 
 A powerful command-line interface for [Harvest](https://www.getharvest.com/) time tracking.
 
