@@ -79,6 +79,10 @@ brews:
     repository:
       owner: dedene
       name: homebrew-tap
+      token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
+    commit_author:
+      name: Peter Dedene
+      email: peter@dedene.com
     directory: Formula
     homepage: https://github.com/dedene/harvest-cli
     description: Harvest time tracking CLI
