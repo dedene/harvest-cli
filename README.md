@@ -278,15 +278,13 @@ harvest completion zsh > "${fpath[1]}/_harvest"
 harvest completion fish > ~/.config/fish/completions/harvest.fish
 ```
 
-## Claude Code Skill
+## Agent Skill
 
-Install as a Claude Code skill:
+This CLI is available as an [open agent skill](https://skills.sh/) for AI assistants including [Claude Code](https://claude.ai/code), [OpenClaw](https://openclaw.ai/), Cursor, and GitHub Copilot:
 
 ```bash
-npx @anthropic-ai/claude-code skills add dedene/harvest-cli
+npx skills add dedene/harvest-cli
 ```
-
-This enables Claude to track time, manage timers, run reports, and handle invoices via Harvest.
 
 ## License
 
