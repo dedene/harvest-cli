@@ -278,6 +278,16 @@ harvest completion zsh > "${fpath[1]}/_harvest"
 harvest completion fish > ~/.config/fish/completions/harvest.fish
 ```
 
+## Claude Code Skill
+
+Install as a Claude Code skill:
+
+```bash
+npx @anthropic-ai/claude-code skills add dedene/harvest-cli
+```
+
+This enables Claude to track time, manage timers, run reports, and handle invoices via Harvest.
+
 ## License
 
 MIT License - see [LICENSE](LICENSE) for details.
