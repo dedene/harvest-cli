@@ -7,6 +7,14 @@ A powerful command-line interface for [Harvest](https://www.getharvest.com/) tim
 [![Go Version](https://img.shields.io/badge/go-1.24+-blue.svg)](https://golang.org)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
+## Agent Skill
+
+This CLI is available as an [open agent skill](https://skills.sh/) for AI assistants including [Claude Code](https://claude.ai/code), [OpenClaw](https://openclaw.ai/), [Codex](https://github.com/openai/codex), Cursor, GitHub Copilot, and [35+ agents](https://github.com/vercel-labs/skills#supported-agents).
+
+```bash
+npx skills add dedene/harvest-cli
+```
+
 ## Features
 
 - **Full Harvest API v2 coverage** - Access all Harvest functionality from the command line
@@ -276,14 +284,6 @@ harvest completion zsh > "${fpath[1]}/_harvest"
 
 # Fish
 harvest completion fish > ~/.config/fish/completions/harvest.fish
-```
-
-## Agent Skill
-
-This CLI is available as an [open agent skill](https://skills.sh/) for AI assistants including [Claude Code](https://claude.ai/code), [OpenClaw](https://openclaw.ai/), Cursor, and GitHub Copilot:
-
-```bash
-npx skills add dedene/harvest-cli
 ```
 
 ## License
