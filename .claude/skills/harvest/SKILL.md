@@ -286,3 +286,10 @@ fi
 - Confirm destructive operations (remove, bulk import) with user first
 - Timer commands affect real billable time - confirm before stopping/modifying
 - Rate limits handled automatically with backoff
+
+
+## Installation
+
+```bash
+brew install dedene/tap/harvestcli
+```
