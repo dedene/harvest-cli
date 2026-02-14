@@ -5,6 +5,27 @@ description: >
   log time entries, start/stop timers, view weekly dashboards, manage invoices, run reports,
   or handle expenses. Triggered by mentions of Harvest, time tracking, timesheets, billable hours,
   or timesheet workflows.
+license: MIT
+homepage: https://github.com/dedene/harvest-cli
+metadata:
+  author: dedene
+  version: "1.1.0"
+  openclaw:
+    primaryEnv: HARVESTCLI_ACCOUNT
+    requires:
+      env:
+        - HARVESTCLI_ACCOUNT
+        - HARVESTCLI_ACCOUNT_ID
+      bins:
+        - harvest
+    install:
+      - kind: brew
+        tap: dedene/tap
+        formula: harvestcli
+        bins: [harvest]
+      - kind: go
+        package: github.com/dedene/harvest-cli/cmd/harvest
+        bins: [harvest]
 ---
 
 # harvest-cli
